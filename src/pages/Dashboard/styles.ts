@@ -58,7 +58,7 @@ export const ContentListDataTop = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 8px;
+  padding: 0 25px;
 `;
 
 export const ContentListDataTitle = styled.Text`

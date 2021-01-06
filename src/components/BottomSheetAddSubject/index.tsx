@@ -1,14 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { TouchableOpacity, Keyboard } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import Modal from 'react-native-modal';
 import Icon from 'react-native-vector-icons/Feather';
 import uuid from 'uuid-random';
+import { BottomSheet } from 'react-native-elements';
 
 import { DashboardContext } from '../../context/dashboardContext';
 
+import banner from '../../assets/banner-add-modal.jpg';
+
 import {
   Container,
+  Banner,
   ContainerTop,
   ContainerTopTitle,
   ContainerData,
@@ -19,19 +22,24 @@ import {
   ButtonFormDataText,
 } from './styles';
 
-const AddModal: React.FC = () => {
+const BottomSheetAddSubject: React.FC = () => {
   const { setShowModal, showModal, storeData } = useContext(DashboardContext);
   const [selectedDayValue, setSelectedDayValue] = useState('');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+
   return (
-    <Modal
-      style={{ backgroundColor: '#fff' }}
+    <BottomSheet
+      containerStyle={{
+        backgroundColor: 'rgba(0.5, 0.25, 0, 0.7)',
+        height: 350,
+        width: '100%',
+      }}
+      modalProps={{ animationType: 'slide' }}
       isVisible={showModal}
-      onBackButtonPress={() => setShowModal(false)}
-      useNativeDriver
     >
       <Container>
+        <Banner source={banner} />
         <ContainerTop>
           <ContainerTopTitle>Adicionar nova entrada</ContainerTopTitle>
           <TouchableOpacity
@@ -90,8 +98,8 @@ const AddModal: React.FC = () => {
           </ButtonFormData>
         </ContainerData>
       </Container>
-    </Modal>
+    </BottomSheet>
   );
 };
 
-export default AddModal;
+export default BottomSheetAddSubject;

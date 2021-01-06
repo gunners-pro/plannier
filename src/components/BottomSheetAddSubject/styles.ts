@@ -3,6 +3,13 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   flex: 1;
   padding: 12px;
+  background-color: #fff;
+`;
+
+export const Banner = styled.Image`
+  width: 100%;
+  height: 300px;
+  justify-content: center;
 `;
 
 export const ContainerTop = styled.View`

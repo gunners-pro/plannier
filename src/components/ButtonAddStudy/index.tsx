@@ -3,7 +3,7 @@ import { TouchableOpacityProps } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { Container } from './styles';
 
-const ButtonAdd: React.FC<TouchableOpacityProps> = ({ ...rest }) => {
+const ButtonAddStudy: React.FC<TouchableOpacityProps> = ({ ...rest }) => {
   return (
     <Container {...rest}>
       <Icon name="plus" size={32} color="#000" />
@@ -11,4 +11,4 @@ const ButtonAdd: React.FC<TouchableOpacityProps> = ({ ...rest }) => {
   );
 };
 
-export default ButtonAdd;
+export default ButtonAddStudy;

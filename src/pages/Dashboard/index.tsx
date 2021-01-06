@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
-import AddModal from '../../components/AddModal';
+import BottomSheetAddSubject from '../../components/BottomSheetAddSubject';
 import { DashboardContext } from '../../context/dashboardContext';
 
 import {
@@ -19,7 +19,7 @@ import {
 import banner from '../../assets/banner-dashboard.jpg';
 
 import data from '../../../data';
-import ButtonAdd from '../../components/Button';
+import ButtonAddStudy from '../../components/ButtonAddStudy';
 import CardItem from '../../components/CardItem';
 
 export interface ListDaysProps {
@@ -64,10 +64,10 @@ const Dashboard: React.FC = () => {
       <ContentListData>
         <ContentListDataTop>
           <ContentListDataTitle>Calendário de Estudos</ContentListDataTitle>
-          <ButtonAdd onPress={() => setShowModal(true)} />
+          <ButtonAddStudy onPress={() => setShowModal(true)} />
         </ContentListDataTop>
 
-        <View style={{ borderWidth: 1, flex: 1 }}>
+        <View style={{ flex: 1 }}>
           {listData.length === 0 && (
             <ActivityIndicator color="#000" size={35} />
           )}
@@ -83,7 +83,7 @@ const Dashboard: React.FC = () => {
         </View>
       </ContentListData>
 
-      <AddModal />
+      <BottomSheetAddSubject />
     </Container>
   );
 };
